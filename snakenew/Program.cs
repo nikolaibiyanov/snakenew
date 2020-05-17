@@ -10,25 +10,36 @@ namespace snakenew
     {
         static void Main(string[] args)
         {
-            //int x1 = 1;
-            //int y1 = 2;
-            //char sym1 = '*';
-
-            //Draw(x1, y1, sym1);
-
-            Point p1 = new Point();
-            p1.x = 1;
-            p1.y = 3;
-            p1.sym = '*';
-            //Draw(p1.x, p1.y, p1.sym);
+            Console.SetBufferSize(80, 25);
+            Point p1 = new Point(1,3,'*');
             p1.Draw();
 
-            Point p2 = new Point();
-            p2.x = 2;
-            p2.y = 3;
-            p2.sym = '#';
+            Point p2 = new Point(2,3,'#');
             p2.Draw();
 
+   /*         List<int> numlisst = new List<int>();
+            numlisst.Add('f');
+            numlisst.Add('a');
+            numlisst.Add('h');
+           
+            List<Point> PointList = new List<Point>();
+            PointList.Add(p1);
+            PointList.Add(p2);
+    */       
+            HorizontalLine upline = new HorizontalLine(0,78,0,'+');
+            HorizontalLine downline = new HorizontalLine(0,78,24,'+');
+            
+            VerticalLine vLeftline = new VerticalLine(0, 24, 0, '+');
+            VerticalLine vRightline = new VerticalLine(0, 24, 78, '+');
+
+            upline.Draw();
+            downline.Draw();
+            vLeftline.Draw();
+            vRightline.Draw();
+
+            Point p = new Point(4, 5, '%');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Draw();
             Console.ReadKey();
         }
 
