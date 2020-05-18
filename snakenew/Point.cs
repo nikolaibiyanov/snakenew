@@ -41,7 +41,7 @@ namespace snakenew
             }
             else if (direction == Direction.UP)
             {
-                y = y + offset;
+                y = y - offset;
             }
             else
                 y = y + offset;
@@ -53,6 +53,12 @@ namespace snakenew
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
         }
     }
 }
